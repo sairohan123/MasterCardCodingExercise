@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +15,7 @@ import com.mastercard.coding.exercise.util.Graph;
 
 @RestController
 public class CitiesController {
-
+	
 	/**
 	 * @param origin
 	 * @param destination
@@ -34,7 +33,6 @@ public class CitiesController {
 		LinkedList<String> visited = new LinkedList<String>();
 		visited.add(origin);
 		depthFirst(graph, visited, destination);
-		System.out.println("================>" + graph.isConnected(origin, destination));
 		return graph.isConnected(origin, destination);
 
 	}
